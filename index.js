@@ -15,11 +15,14 @@ class App extends Component {
     return (
       <div>
         <div>
+          <p>Event Handler</p>
           <button>Click me</button>
         </div>
-        <button>Increment</button>
-        <button>Increment</button>
-        <p>Current Counter : {this.state.counter}</p>
+        <div style={{"margin-top": "50px"}}>
+          <button>Increment</button>
+          <button>Increment</button>
+          <p>Current Counter : {this.state.counter}</p>
+        </div>
       </div>
     );
   }
