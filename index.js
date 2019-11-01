@@ -12,22 +12,33 @@ class App extends Component {
       counterToggleText: "Hide Counter"
     };
 
-    this.handleEvent = this.handleEvent.bind();
+    this.handleToggle = this.handleToggle.bind();
+    this.handleSimpleEvent = this.handleSimpleEvent.bind();
   }
 
-handleEvent() {
-  this.state = { counterToggle: !this.state.counterToggle}
-}
+  handleSimpleEvent() {
+    alert("Inside handleSimpleEvent");
+  }
+
+  handleToggle() {
+    let toggleState = !this.state.counterToggle;
+    let toggleText = toggleText ? "Show Counter" : "Hide Counter";
+    this.state = { 
+      counterToggle: !this.state.counterToggle
+       };
+  }
 
   render() {
     return (
       <div>
         <div>
           <p>Event Handler</p>
-          <button onClick={this.handleEvent}>Simple Event Handler</button>
-          <button onClick={this.handleEvent}>{this.state.counterToggleText}</button>
+          <button onClick={this.handleSimpleEvent}>Simple Event Handler</button>
+          <button onClick={this.handleToggle}>
+            {this.state.counterToggleText}
+          </button>
         </div>
-        <div style={{"margin-top": "50px"}}>
+        <div style={{ "margin-top": "50px" }}>
           <button>Increment</button>
           <button>Increment</button>
           <p>Current Counter : {this.state.counter}</p>
