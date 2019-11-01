@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import Hello from './Hello';
-import './style.css';
+import React, { Component } from "react";
+import { render } from "react-dom";
+import Hello from "./Hello";
+import "./style.css";
 
 class App extends Component {
   constructor() {
@@ -14,14 +14,15 @@ class App extends Component {
   render() {
     return (
       <div>
-      <button>Increment</button>
-      <button>Increment</button>
-        <p>
-          Current Counter : {this.state.counter}
-        </p>
+        <div>
+          <button>Click me</button>
+        </div>
+        <button>Increment</button>
+        <button>Increment</button>
+        <p>Current Counter : {this.state.counter}</p>
       </div>
     );
   }
 }
 
-render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById("root"));
