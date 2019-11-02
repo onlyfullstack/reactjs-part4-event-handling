@@ -4,8 +4,8 @@ import Hello from "./Hello";
 import "./style.css";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       counter: 0,
       counterToggle: true,
@@ -21,11 +21,12 @@ class App extends Component {
   }
 
   handleToggle() {
-    let toggleState = !this.state.counterToggle;
-    let toggleText = toggleText ? "Show Counter" : "Hide Counter";
-    this.state = { 
-      counterToggle: !this.state.counterToggle
-       };
+    // let toggleState = !this.state.counterToggle;
+    // let toggleText = toggleState ? "Show Counter" : "Hide Counter";
+    // this.setState({
+    //   counterToggle: !this.state.counterToggle
+    // });
+    console.log("hande : "+this.state.counterToggleText);
   }
 
   render() {
