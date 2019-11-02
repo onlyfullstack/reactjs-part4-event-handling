@@ -12,8 +12,10 @@ class App extends Component {
       counterToggleText: "Hide Counter"
     };
 
-    this.handleToggle = this.handleToggle.bind();
-    this.handleSimpleEvent = this.handleSimpleEvent.bind();
+    this.handleToggle = this.handleToggle.bind(this);
+    this.handleSimpleEvent = this.handleSimpleEvent.bind(this);
+    this.handleIncrement = this.handleIncrement.bind(this);
+    this.handleDecrement = this.handleDecrement.bind(this);
   }
 
   handleSimpleEvent() {
@@ -21,12 +23,20 @@ class App extends Component {
   }
 
   handleToggle() {
-    // let toggleState = !this.state.counterToggle;
-    // let toggleText = toggleState ? "Show Counter" : "Hide Counter";
-    // this.setState({
-    //   counterToggle: !this.state.counterToggle
-    // });
-    console.log("hande : "+this.state.counterToggleText);
+    let toggleState = !this.state.counterToggle;
+    let toggleText = toggleState ? "Hide Counter" : "Show Counter";
+    this.setState({
+      counterToggle: toggleState,
+      counterToggleText: toggleText
+    });
+  }
+
+  handleIncrement() {
+    this.setState({counter: this.state.counter+1});
+  }
+
+  handleDecrement() {
+    this.setState({counter: this.state.counter-1});
   }
 
   render() {
@@ -39,12 +49,15 @@ class App extends Component {
             {this.state.counterToggleText}
           </button>
         </div>
+        {this.state.counterToggle && 
         <div style={{ "margin-top": "50px" }}>
-          <button>Increment</button>
-          <button>Increment</button>
+          <button onClick={this.handleIncrement}>Increment</button>
+          <button onClick={this.handleDecrement}>Decrement</button>
           <p>Current Counter : {this.state.counter}</p>
         </div>
+        }
       </div>
+        
     );
   }
 }
