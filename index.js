@@ -31,11 +31,11 @@ class App extends Component {
   }
 
   handleIncrement() {
-    this.setState({ counter: this.state.counter + 1 });
+    this.setState({counter: this.state.counter+1});
   }
 
   handleDecrement() {
-    this.setState({ counter: this.state.counter - 1 });
+    this.setState({counter: this.state.counter-1});
   }
 
   render() {
@@ -48,14 +48,15 @@ class App extends Component {
             {this.state.counterToggleText}
           </button>
         </div>
-        {this.state.counterToggle && (
-          <div style={{ "margin-top": "50px" }}>
-            <button onClick={this.handleIncrement}>Increment</button>
-            <button onClick={this.handleDecrement}>Decrement</button>
-            <p>Current Counter : {this.state.counter}</p>
-          </div>
-        )}
+        {this.state.counterToggle && 
+        <div style={{ "margin-top": "50px" }}>
+          <button onClick={this.handleIncrement}>Increment</button>
+          <button onClick={this.handleDecrement}>Decrement</button>
+          <p>Current Counter : {this.state.counter}</p>
+        </div>
+        }
       </div>
+        
     );
   }
 }
